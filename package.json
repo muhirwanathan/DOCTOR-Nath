@@ -1,0 +1,20 @@
+{
+  "name": "doctor-nath",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:server": "npm run dev --workspace server",
+    "dev:web": "npm run dev --workspace web",
+    "seed": "npm run seed --workspace server",
+    "test": "npm test --workspace server",
+    "build": "npm run build --workspace web && npm run typecheck --workspace server",
+    "start": "npm start --workspace server"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
