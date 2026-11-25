@@ -1,0 +1,23 @@
+# Render blueprint: one web service runs the API and serves the built web app.
+# Deploy: Render dashboard -> New -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: doctor-nath
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      # The free plan has no persistent disk, so demo data is reloaded on each restart.
+      - key: SEED_IF_EMPTY
+        value: "true"
+      # Optional: enables "Draft with AI" for mentors.
+      - key: ANTHROPIC_API_KEY
+        sync: false
