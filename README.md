@@ -4,7 +4,7 @@
 
 | | |
 | --- | --- |
-| Live app | _add your Render URL here_ |
+| Live app | <https://doctor-nath.onrender.com> (free hosting: the first visit after a quiet period takes about a minute to wake up) |
 | SRS document | _add your SRS link here_ |
 | Demo video | _add your video link here_ |
 | Author | Muhirwa Nathan, African Leadership University |
